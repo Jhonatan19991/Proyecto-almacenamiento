@@ -231,7 +231,6 @@ HAVING COUNT(idusuario) > 1;
 
 5. **Cliente con Más Reseñas y Calificación Promedio:**
    - ¿Quién es la persona que ha realizado la mayor cantidad de reseñas y cuál es la calificación promedio que ha asignado?
-     select usuario.Nombre as nombre_usuario, count(opinion.IDopinion) as cantidad_opiniones, avg(opinion.Calificacion) as promedio_calificacion 
 
      ```sql
       SELECT usuario.Nombre AS nombre_usuario, COUNT(opinion.IDopinion) AS cantidad_opiniones, AVG(opinion.Calificacion) AS promedio_calificacion 
