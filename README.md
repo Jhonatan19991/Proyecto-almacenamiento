@@ -95,16 +95,20 @@ INSERT INTO PROYECTO.Promocion (Fecha_inicion, Fecha_final, Descripcion, Tipo) V
 ```
 ### Tabla Producto
 ```sql
-INSERT INTO PROYECTO.Producto (Nombre, Talla, Precio, Categoria, Descripcion, Stock, Imagen, Tipo) VALUES
-('Camiseta Azul', 'M', 19.99, 'Camiseta', 'Camiseta de algodon azul', 50, 'Estampado1', 'Personalizado');
+INSERT INTO PROYECTO.Producto (Nombre, Talla, Precio, Categoria, Descripcion, Stock, Imagen, Tipo,Genero) VALUES
+('Camiseta Azul', 'M', 19.99, 'Camiseta', 'Camiseta de algodon azul', 50, 'Estampado1', 'Personalizado','Hombres');
 
 ```
 
-| IDproducto | Nombre          | Talla | Precio | Categoria | Descripcion                   | Stock | Imagen    | Tipo         |
-|------------|-----------------|-------|--------|-----------|-------------------------------|-------|-----------|--------------|
-| 1          | Camiseta Azul   | M     | 19.99  | Camiseta  | Camiseta de algodon azul     | 50    | Estampado1| Personalizado|
-| 2          | Chaqueta Deportiva | L | 59.99  | Chaqueta  | Chaqueta impermeable para deportes | 30 | Estampado2| Deportivo    |
-| ...        | ...             | ...   | ...    | ...       | ...                           | ...   | ...       | ...          |
+
+
+| IDproducto | Nombre          | Talla | Precio | Categoria | Descripcion                   | Stock | Imagen    | Tipo         | Genero   |
+|------------|-----------------|-------|--------|-----------|-------------------------------|-------|-----------|--------------|----------|
+| 1          | Camiseta Azul   | M     | 19.99  | Camiseta  | Camiseta de algodon azul     | 50    | Estampado1| Personalizado| Hombres  |
+| 2          | Chaqueta Deportiva | L | 59.99  | Chaqueta  | Chaqueta impermeable para deportes | 30 | Estampado2| Deportivo    | Hombres  |
+| ...        | ...             | ...   | ...    | ...       | ...                           | ...   | ...       | ...          | ...      |
+
+
 
 ### Tabla Promocion Producto
 
