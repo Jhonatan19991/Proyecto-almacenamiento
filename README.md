@@ -6,7 +6,7 @@
 
 # SportTrend
 
- en el proyecto se ha diseñado e implementado un sistema de almacenamiento para respaldar una aplicación web de venta y personalización de ropa deportiva. Se han creado las tablas necesarias en la base de datos, se han ingresado valores de muestra en estas tablas y se han realizado consultas para verificar el funcionamiento del sistema.
+En el proyecto se ha diseñado e implementado un sistema de almacenamiento para respaldar una aplicación web de venta y personalización de ropa deportiva. Se han creado las tablas necesarias en la base de datos, se han ingresado valores de muestra en estas tablas y se han realizado consultas para verificar el funcionamiento del sistema.
 
 
 ## Plantear La Base De Datos
