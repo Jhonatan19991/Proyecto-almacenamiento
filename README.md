@@ -213,14 +213,14 @@ Se realizaron consultas para responder a preguntas clave que podrían proporcion
 1. **Cliente Principal por Gasto:**
    - ¿Quién es el cliente que ha realizado la mayor cantidad de compras y cuánto ha gastado en total?
        ```sql
-        FROM usuario as u JOIN compra as cm USING (IDusuario)
+        SELECT u.nombre, count(cm.IDcompra) as numCompras, sum(cm.Total) as dineroGastado FROM usuario as u JOIN compra as cm USING (IDusuario)
         GROUP BY cm.IDusuario
         HAVING count(cm.IDusuario) = (SELECT max(numeroCompras)
         FROM (SELECT cm.IDusuario, count(cm.idCompra) as numeroCompras
         FROM compra as cm
         GROUP BY cm.IDusuario) as usuarioMayorCompras);
       ```
-     SELECT u.nombre, count(cm.IDcompra) as numCompras, sum(cm.Total) as dineroGastado
+     
 
 
 2. **Producto Más Popular:**
