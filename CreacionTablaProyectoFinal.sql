@@ -76,6 +76,7 @@ CREATE TABLE IF NOT EXISTS `PROYECTO`.`Producto` (
   `Stock` INT NOT NULL,
   `Imagen` VARCHAR(255) NULL,
   `Tipo` ENUM('Personalizado', 'Deportivo') NOT NULL,
+  `Genero` ENUM('Mujeres', 'Hombres','Niños') NOT NULL,
   PRIMARY KEY (`IDproducto`))
 ENGINE = InnoDB;
 
