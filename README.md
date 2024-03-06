@@ -218,14 +218,7 @@ Se realizaron consultas para responder a preguntas clave que podrían proporcion
       HAVING COUNT(idusuario) > 1;
 
       ```
-
-     SELECT usuario.nombre AS nombre 
-FROM usuario 
-JOIN rol USING (idusuario)
-GROUP BY nombre 
-HAVING COUNT(idusuario) > 1;
-
-
+       
 4. **Producto con Más Promociones y Promedio de Descuento:**
    - ¿Qué producto tiene la mayor cantidad de promociones y cuál es el promedio de descuento para esas promociones?
 
