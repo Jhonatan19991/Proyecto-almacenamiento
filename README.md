@@ -225,7 +225,20 @@ Se realizaron consultas para responder a preguntas clave que podrían proporcion
 
 2. **Producto Más Popular:**
    - ¿Cuál es el producto que se ha vendido en mayor cantidad?
-
+       ```sql
+      SELECT producto.Nombre, SUM(carrito_compra.Cantidad) AS cantidad_vendida 
+      FROM carrito_compra 
+      JOIN producto USING (idproducto) 
+      GROUP BY carrito_compra.IDproducto 
+      HAVING SUM(carrito_compra.Cantidad) = (
+          SELECT MAX(suma_cantidad) 
+          FROM (
+              SELECT carrito_compra.IDproducto, SUM(carrito_compra.Cantidad) AS suma_cantidad 
+              FROM carrito_compra 
+              GROUP BY carrito_compra.IDproducto
+          ) AS maximo_producto
+      );
+      ```
 3. **Clientes con Múltiples Cuentas:**
    - ¿Cuáles son los nombres de las personas que tienen más de una cuenta registrada?
        ```sql
@@ -239,7 +252,29 @@ Se realizaron consultas para responder a preguntas clave que podrían proporcion
        
 4. **Producto con Más Promociones y Promedio de Descuento:**
    - ¿Qué producto tiene la mayor cantidad de promociones y cuál es el promedio de descuento para esas promociones?
+       ```sql
+        SELECT 
+            pp.IDproducto,
+            COUNT(pp.IDpromocion) AS TotalPromociones,
+            AVG(pp.Descuento) AS PromedioDescuento
+        FROM 
+            Promocion_producto pp
+        GROUP BY 
+            pp.IDproducto
+        HAVING 
+            COUNT(pp.IDpromocion) = (
+                SELECT MAX(TotalPromociones) FROM (
+                    SELECT 
+                        IDproducto, 
+                        COUNT(IDpromocion) AS TotalPromociones
+                    FROM 
+                        Promocion_producto
+                    GROUP BY 
+                        IDproducto
+                ) AS SubConsulta
+            );
 
+      ```
 5. **Cliente con Más Reseñas y Calificación Promedio:**
    - ¿Quién es la persona que ha realizado la mayor cantidad de reseñas y cuál es la calificación promedio que ha asignado?
 
