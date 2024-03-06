@@ -88,11 +88,8 @@ INSERT INTO PROYECTO.Promocion (Fecha_inicion, Fecha_final, Descripcion, Tipo) V
 | 2           | 2024-04-01    | 2024-04-10  | Oferta individual     | individual |
 | ...         | ...           | ...         | ...                  | ...    |
 
-```sql
-INSERT INTO PROYECTO.Promocion (Fecha_inicion, Fecha_final, Descripcion, Tipo) VALUES
-('2024-03-01', '2024-03-15', 'Descuento de primavera', 'grupal');
 
-```
+
 ### Tabla Producto
 ```sql
 INSERT INTO PROYECTO.Producto (Nombre, Talla, Precio, Categoria, Descripcion, Stock, Imagen, Tipo,Genero) VALUES
