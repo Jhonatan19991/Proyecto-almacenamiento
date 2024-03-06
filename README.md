@@ -7,6 +7,24 @@
 # SportTrend
 
 En el proyecto se ha diseñado e implementado un sistema de almacenamiento para respaldar una aplicación web de venta y personalización de ropa deportiva. Se han creado las tablas necesarias en la base de datos, se han ingresado valores de muestra en estas tablas y se han realizado consultas para verificar el funcionamiento del sistema.
+# Índice
+
+
+1. [Plantear La Base De Datos](#plantear-la-base-de-datos)
+2. [Tablas y Registros](#tablas-y-registros)
+    - [Tabla Usuario](#tabla-usuario)
+    - [Tabla Rol](#tabla-rol)
+    - [Tabla Promoción](#tabla-promoción)
+    - [Tabla Producto](#tabla-producto)
+    - [Tabla Promoción_producto](#tabla-promocion-producto)
+    - [Tabla Opinion](#tabla-opinion)
+    - [Tabla Compra](#tabla-compra)
+    - [Tabla Carrito_compra](#tabla-carrito_compra)
+    - [Tabla Departamento](#tabla-departamento)
+    - [Tabla Ciudad](#tabla-ciudad)
+    - [Tabla Detalle_envio](#tabla-detalle_envio)
+3. [Consultas para Análisis de Valor](#consultas-para-análisis-de-valor)
+
 
 
 ## Plantear La Base De Datos
@@ -75,7 +93,7 @@ INSERT INTO PROYECTO.Promocion (Fecha_inicion, Fecha_final, Descripcion, Tipo) V
 ('2024-03-01', '2024-03-15', 'Descuento de primavera', 'grupal');
 
 ```
-### Producto
+### Tabla Producto
 ```sql
 INSERT INTO PROYECTO.Producto (Nombre, Talla, Precio, Categoria, Descripcion, Stock, Imagen, Tipo) VALUES
 ('Camiseta Azul', 'M', 19.99, 'Camiseta', 'Camiseta de algodon azul', 50, 'Estampado1', 'Personalizado');
@@ -88,7 +106,7 @@ INSERT INTO PROYECTO.Producto (Nombre, Talla, Precio, Categoria, Descripcion, St
 | 2          | Chaqueta Deportiva | L | 59.99  | Chaqueta  | Chaqueta impermeable para deportes | 30 | Estampado2| Deportivo    |
 | ...        | ...             | ...   | ...    | ...       | ...                           | ...   | ...       | ...          |
 
-### Tabla Promocion_producto
+### Tabla Promocion Producto
 
 ```sql
 INSERT INTO PROYECTO.Promocion_producto (IDproducto, IDpromocion, Descuento) VALUES
