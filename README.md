@@ -94,8 +94,8 @@ INSERT INTO PROYECTO.Promocion (Fecha_inicion, Fecha_final, Descripcion, Tipo) V
 
 ### Tabla Producto
 ```sql
-INSERT INTO PROYECTO.Producto (Nombre, Talla, Precio, Categoria, Descripcion, Stock, Imagen, Tipo,Genero) VALUES
-('Camiseta Azul', 'M', 19.99, 'Camiseta', 'Camiseta de algodon azul', 50, 'Estampado1', 'Personalizado','Hombres');
+INSERT INTO PROYECTO.Producto (Nombre,  Precio, Categoria, Descripcion, Imagen, Tipo,Genero) VALUES
+('Camiseta Azul', 19.99, 'Camiseta', 'Camiseta de algodon azul', 'Estampado1', 'Personalizado','Hombres');
 
 ```
 
