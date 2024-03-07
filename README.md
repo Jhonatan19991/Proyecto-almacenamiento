@@ -16,6 +16,8 @@ En el proyecto se ha diseñado e implementado un sistema de almacenamiento para 
     - [Tabla Rol](#tabla-rol)
     - [Tabla Promoción](#tabla-promoción)
     - [Tabla Producto](#tabla-producto)
+    - [Tabla Talla](#tabla-talla)
+    - [Tabla Stock_Talla](#tabla-stock-talla)
     - [Tabla Promoción_producto](#tabla-promocion-producto)
     - [Tabla Opinion](#tabla-opinion)
     - [Tabla Compra](#tabla-compra)
@@ -99,12 +101,40 @@ INSERT INTO PROYECTO.Producto (Nombre, Talla, Precio, Categoria, Descripcion, St
 
 
 
-| IDproducto | Nombre          | Talla | Precio | Categoria | Descripcion                   | Stock | Imagen    | Tipo         | Genero   |
-|------------|-----------------|-------|--------|-----------|-------------------------------|-------|-----------|--------------|----------|
-| 1          | Camiseta Azul   | M     | 19.99  | Camiseta  | Camiseta de algodon azul     | 50    | Estampado1| Personalizado| Hombres  |
-| 2          | Chaqueta Deportiva | L | 59.99  | Chaqueta  | Chaqueta impermeable para deportes | 30 | Estampado2| Deportivo    | Hombres  |
-| ...        | ...             | ...   | ...    | ...       | ...                           | ...   | ...       | ...          | ...      |
+| IDproducto | Nombre              | Precio | Categoria  | Descripcion                      | Imagen       | Tipo          | Genero   |
+|------------|---------------------|--------|------------|----------------------------------|--------------|---------------|----------|
+| 1          | Camiseta Azul       | 19.99  | Camiseta   | Camiseta de algodon azul        | Estampado1   | Personalizado | Hombres  |
+| 2          | Chaqueta Deportiva  | 59.99  | Chaqueta   | Chaqueta impermeable para deportes | Estampado2 | Deportivo     | Hombres  |
+| ...        | ...                 | ...    | ...        | ...                              | ...          | ...           | ...      |
 
+
+### Tabla Talla
+```sql
+INSERT INTO PROYECTO.Talla (nombre) VALUES
+('XS');
+
+
+```
+| IDtalla | nombre |
+|---------|--------|
+| 1       | XS     |
+| 2       | S      |
+| 3       | M      |
+
+
+### Tabla Stock Talla
+
+```sql
+INSERT INTO PROYECTO.Stock_talla (IDproducto, IDtalla, Stock) VALUES
+(1, 3, 50);
+
+```
+
+| IDproducto | IDtalla | Stock |
+|------------|---------|-------|
+| 1          | 3       | 50    |
+| 2          | 4       | 30    |
+| ...        | ...     | ...   |
 
 
 ### Tabla Promocion Producto
