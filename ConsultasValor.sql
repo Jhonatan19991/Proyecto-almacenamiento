@@ -123,6 +123,8 @@ LEFT JOIN compra as c ON u.IDusuario = c.IDusuario
 WHERE c.IDcompra IS NULL;
 
 -- Producto sin stock
-SELECT producto.nombre AS producto
-FROM producto
-WHERE stock = 0;
+SELECT p.nombre AS Producto, t.nombre AS Talla
+FROM producto as p 
+JOIN stock_talla as stck USING (idProducto)
+JOIN talla as t USING (idTalla)
+WHERE stck.stock = 0;
