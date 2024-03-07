@@ -69,11 +69,9 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `PROYECTO`.`Producto` (
   `IDproducto` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(50) NOT NULL,
-  `Talla` ENUM('XS', 'S', 'M', 'L', 'XL') NOT NULL,
   `Precio` DECIMAL(10,2) NOT NULL,
   `Categoria` ENUM('Camiseta', 'Chaqueta', 'Buzos', 'Sudaderas') NOT NULL,
   `Descripcion` VARCHAR(255) NOT NULL,
-  `Stock` INT NOT NULL,
   `Imagen` VARCHAR(255) NULL,
   `Tipo` ENUM('Personalizado', 'Deportivo') NOT NULL,
   `Genero` ENUM('Mujeres', 'Hombres','Niños') NOT NULL,
@@ -110,7 +108,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `PROYECTO`.`Opinion` (
   `IDopinion` INT NOT NULL AUTO_INCREMENT,
   `Comentario` VARCHAR(255) NOT NULL,
-  `Calificacion` ENUM('1', '2', '3', '4', '5') NOT NULL,
+  `Calificacion` INT(1) NOT NULL,
   `Fecha` DATETIME NOT NULL,
   `IDproducto` INT NOT NULL,
   `IDusuario` INT NOT NULL,
@@ -129,6 +127,7 @@ CREATE TABLE IF NOT EXISTS `PROYECTO`.`Opinion` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+ALTER TABLE  `PROYECTO`.`Opinion` ADD CONSTRAINT CheckCalificacion Check (Calificacion>=1 and Calificacion<=5);
 
 -- -----------------------------------------------------
 -- Table `PROYECTO`.`Compra`
@@ -225,7 +224,36 @@ CREATE TABLE IF NOT EXISTS `PROYECTO`.`Detalle_envio` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+- -----------------------------------------------------
+-- Table `PROYECTO`.`Talla`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `PROYECTO`.`Talla` (
+  `IDtalla` INT NOT NULL AUTO_INCREMENT,
+  `nombre` ENUM('XS', 'S', 'M', 'L', 'XL' ) NULL,
+  PRIMARY KEY (`IDtalla`))
+ENGINE = InnoDB;
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Table `PROYECTO`.`Stock_talla`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `PROYECTO`.`Stock_talla` (
+  `IDproducto` INT NOT NULL,
+  `IDtalla` INT NOT NULL,
+  `Stock` INT NOT NULL,
+  PRIMARY KEY (`IDproducto`, `IDtalla`),
+  INDEX `fk_Stock_talla_Talla1_idx` (`IDtalla` ASC) ,
+  CONSTRAINT `fk_Stock_talla_Producto1`
+    FOREIGN KEY (`IDproducto`)
+    REFERENCES `PROYECTO`.`Producto` (`IDproducto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Stock_talla_Talla1`
+    FOREIGN KEY (`IDtalla`)
+    REFERENCES `PROYECTO`.`Talla` (`IDtalla`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+

@@ -33,20 +33,39 @@ INSERT INTO PROYECTO.Promocion (Fecha_inicion, Fecha_final, Descripcion, Tipo) V
 ('2024-05-01', '2024-05-10', 'Oferta individual', 'individual'),
 ('2024-06-01', '2024-06-15', 'Verano especial', 'grupal');
 
+-- Registros para la tabla Talla
+INSERT INTO PROYECTO.Talla (nombre) VALUES
+('XS'),
+('S'),
+('M'),
+('L'),
+('XL');
 
 -- Registros para la tabla Producto
-INSERT INTO PROYECTO.Producto (Nombre, Talla, Precio, Categoria, Descripcion, Stock, Imagen, Tipo, Genero) VALUES
-('Camiseta Azul', 'M', 19.99, 'Camiseta', 'Camiseta de algodon azul', 50, 'Estampado1', 'Personalizado', 'Hombres'),
-('Chaqueta Deportiva', 'L', 59.99, 'Chaqueta', 'Chaqueta impermeable para deportes', 30, 'Estampado2', 'Deportivo', 'Hombres'),
-('Buzo Gris', 'L', 39.99, 'Buzos', 'Buzo de algodon gris', 20, 'Estampado3', 'Personalizado', 'Hombres'),
-('Sudadera Roja', 'M', 49.99, 'Sudaderas', 'Sudadera comoda en color rojo', 15, 'Estampado4', 'Deportivo', 'Mujeres'),
-('Camiseta Blanca', 'S', 15.99, 'Camiseta', 'Camiseta clasica en color blanco', 30, 'Estampado5', 'Personalizado', 'Mujeres'),
-('Chaqueta Negra', 'XL', 69.99, 'Chaqueta', 'Chaqueta impermeable en color negro', 25, 'Estampado6', 'Deportivo', 'Hombres'),
-('Buzo Rosa', 'M', 45.99, 'Buzos', 'Buzo de algodon rosa', 18, 'Estampado7', 'Personalizado', 'Mujeres'),
-('Sudadera Azul', 'S', 54.99, 'Sudaderas', 'Sudadera comoda en color azul', 12, 'Estampado8', 'Deportivo', 'Mujeres'),
-('Chaqueta Verde', 'L', 34.99, 'Chaqueta', 'Chaqueta ligera en color verde', 28, 'Estampado9', 'Deportivo', 'Hombres'),
-('Camiseta Amarilla', 'XS', 22.99, 'Camiseta', 'Camiseta vibrante en color amarillo', 35, 'Estampado10', 'Personalizado', 'Niños');
+INSERT INTO PROYECTO.Producto (Nombre, Precio, Categoria, Descripcion, Imagen, Tipo, Genero) VALUES
+('Camiseta Azul', 19.99, 'Camiseta', 'Camiseta de algodon azul', 'Estampado1', 'Personalizado', 'Hombres'),
+('Chaqueta Deportiva', 59.99, 'Chaqueta', 'Chaqueta impermeable para deportes', 'Estampado2', 'Deportivo', 'Hombres'),
+('Buzo Gris', 39.99, 'Buzos', 'Buzo de algodon gris', 'Estampado3', 'Personalizado', 'Hombres'),
+('Sudadera Roja', 49.99, 'Sudaderas', 'Sudadera comoda en color rojo', 'Estampado4', 'Deportivo', 'Mujeres'),
+('Camiseta Blanca', 15.99, 'Camiseta', 'Camiseta clasica en color blanco', 'Estampado5', 'Personalizado', 'Mujeres'),
+('Chaqueta Negra', 69.99, 'Chaqueta', 'Chaqueta impermeable en color negro', 'Estampado6', 'Deportivo', 'Hombres'),
+('Buzo Rosa', 45.99, 'Buzos', 'Buzo de algodon rosa', 'Estampado7', 'Personalizado', 'Mujeres'),
+('Sudadera Azul', 54.99, 'Sudaderas', 'Sudadera comoda en color azul', 'Estampado8', 'Deportivo', 'Mujeres'),
+('Chaqueta Verde', 34.99, 'Chaqueta', 'Chaqueta ligera en color verde', 'Estampado9', 'Deportivo', 'Hombres'),
+('Camiseta Amarilla', 22.99, 'Camiseta', 'Camiseta vibrante en color amarillo', 'Estampado10', 'Personalizado', 'Niños');
 
+-- Registros para la tabla Stock_talla
+INSERT INTO PROYECTO.Stock_talla (IDproducto, IDtalla, Stock) VALUES
+(1, 3, 50),  -- Camiseta Azul - M
+(2, 4, 30),  -- Chaqueta Deportiva - L
+(3, 4, 20),  -- Buzo Gris - L
+(4, 3, 15),  -- Sudadera Roja - M
+(5, 2, 30),  -- Camiseta Blanca - S
+(6, 5, 25),  -- Chaqueta Negra - XL
+(7, 3, 18),  -- Buzo Rosa - M
+(8, 2, 12),  -- Sudadera Azul - S
+(9, 4, 28),  -- Chaqueta Verde - L
+(10, 1, 35); -- Camiseta Amarilla - XS
 
 -- Registros para la tabla Promocion_producto
 INSERT INTO PROYECTO.Promocion_producto (IDproducto, IDpromocion, Descuento) VALUES
